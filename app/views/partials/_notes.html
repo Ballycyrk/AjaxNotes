@@ -1,0 +1,14 @@
+{% for note in notes %}
+  <div class="note">
+    <form action="/Notes/update/{{note['id']}}" method='post'>
+      <input class='btn' type='submit' value='update'>
+    </form>
+    <div class="content">
+      <h4>{{ note['title'] }}</h4>
+      <h5>{{ note['content'] }}</h5>
+    </div>
+    <form action="/Notes/delete/{{note['id']}}" method='get'>
+      <input class='btn' type='submit' value='delete'>
+    </form>
+  </div>
+{% endfor %}
